@@ -1,0 +1,15 @@
+{% extends 'base.html'%}
+
+<head>
+    <meta charset="UTF-8">
+    <title>{%block title %}Logout{% endblock %}</title>
+</head>
+
+<body>
+    {%block content %}
+        <h3>Logout</h3>
+        <p>See you soon...</p>
+        <br><br>
+        <p><a href="{%url 'login'%}">Login</a></p>
+    {% endblock %}
+</body>

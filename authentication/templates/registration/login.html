@@ -1,0 +1,44 @@
+{% extends 'base.html'%}
+{% load static %}
+{% load crispy_forms_tags %}
+
+<head>
+    <title class="title">{%block title %}Login{% endblock %}</title>
+
+    {%block head_css %}
+    <!--Getting block head_css content from base.html-->
+    {{ block.super }}
+    
+    {% endblock head_css %}
+</head>
+
+<body>
+    {%block content %}
+        {% if user.is_authenticated %}
+            <br>
+            <p>You're already logged in</p>
+            <p><a href="/">Home Page</a></p>
+            <small><a href= "{% url 'logout' %}">Logout</a></small>
+
+        {% else %}
+            <h3>Login</h3>
+            <fieldset class="field_login" >
+                <form method="POST" action="{%url 'login'%}">
+                    <div class="mb-3" >
+                        {% csrf_token %}
+                        {{ form|crispy}}
+                    </div>
+                    
+                    <p><input type="submit" value ="Login" class="btn btn-primary"></p>
+                    <br>
+                    <p>Don't have an account? <a href= "{% url 'register' %}">Sing Up</a></p>
+                </form>
+
+            </fieldset>
+
+        {% endif %}
+
+    {% endblock %}
+</body>
+
+</html>
