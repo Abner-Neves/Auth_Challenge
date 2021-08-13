@@ -1,6 +1,6 @@
 ## Auth_Challenge
 
-A basic authentication web app using Python, Django, SQLite and BootStrap
+A basic authentication web app using Python, Django, HTML and BootStrap
 
 ### How to run
 After downloading it, you can open up the folder through your command prompt and type the following:
