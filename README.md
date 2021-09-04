@@ -1,4 +1,4 @@
-## Auth_Challenge
+## User_Auth
 
 A basic authentication web app using Python, Django, HTML and BootStrap
 
